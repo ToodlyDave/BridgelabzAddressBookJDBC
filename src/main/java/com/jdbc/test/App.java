@@ -3,6 +3,7 @@ package com.jdbc.test;
 import java.sql.Connection;
 
 import com.jdbc.config.Config;
+import com.jdbc.service.StatementDB;
 
 public class App {
 
@@ -15,5 +16,8 @@ public class App {
 			System.out.println(" Connection established");
 		else
 			System.out.println(" Connection failed");
+		
+		StatementDB statement = new StatementDB(connection);
+		statement.read();
 	}
 }
